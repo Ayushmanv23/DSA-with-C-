@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int sum, prod;
+    cout<<"Enter the sum and product values: ";
+    cin >> sum >> prod;
+    int dis = sum*sum-4*prod;
+    if(dis<0) 
+    {
+        cout<<"Roots are imaginary."<<endl;
+    } 
+    else 
+    {
+        int x = (sum + sqrt(dis))/2;
+        int y = (sum - sqrt(dis))/2;
+        if(x<y)
+            cout<<"The value of x is "<<x<<" and the value of y is "<<y<<endl;
+        else
+            cout<<"The value of x is "<<y<<" and the value of y is "<<x<<endl;
+    }
+    return 0;
+}
