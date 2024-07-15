@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+void add(int x,int y)
+{
+    int sum;
+    sum = x + y;
+    cout<<endl<<"The sum of a and b is "<<sum<<endl;
+}
+void sub(int x,int y)
+{
+    int sub;
+    sub = x - y;
+    cout<<"The subtraction of a and b is "<<sub<<endl;
+}
+void mul(int x,int y)
+{
+    int mul;
+    mul = x * y;
+    cout<<"The multiplication of a and b is "<<mul<<endl;
+}
+void divi(float x,float y)
+{
+    float divi;
+    divi = x / y;
+    cout<<"The division of a and b is "<<divi<<endl;
+}
+
+void rem(int x,int y)
+{
+    int rem;
+    rem = x % y;
+    cout<<"The remainder of a and b is "<<rem<<endl;
+}
+
+int main()
+{
+    int a,b;
+    cout<<"Enter the value of a: ";
+    cin>>a;
+    cout<<"Enter the value of b: ";
+    cin>>b;
+    add(a,b);
+    sub(a,b);
+    mul(a,b);
+    divi(a,b);
+    rem(a,b);
+}
