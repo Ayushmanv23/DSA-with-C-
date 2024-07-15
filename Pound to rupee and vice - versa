@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int num;
+    float pound;
+    cout<<"Enter the number of indian rupees: ";
+    cin>>num;
+    cout<<num<<" rupees is "<<num/106.89<<" pound."<<endl;
+    cout<<"Enter the number of pound: ";
+    cin>>pound;
+    cout<<pound<<" pound is "<<pound*106.89<<" indian rupees."<<endl;
+    return 0;
+}
