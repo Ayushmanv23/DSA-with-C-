@@ -1,0 +1,64 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    stack<int> s;
+    cout<<"*** STACK OPERATIONS ***"<<endl;
+    cout<<"1. Size of stack"<<endl;
+    cout<<"2. Insert element into the stack"<<endl;
+    cout<<"3. Delete element from the stack"<<endl;
+    cout<<"4. Top element of the stack"<<endl;
+    cout<<"5. Exit"<<endl;
+    while(true) 
+    {
+        int n;
+        cout<<"Enter your choice: ";
+        cin>>n;
+        if(n == 1) 
+        {
+            cout<<"The size of stack is "<<s.size()<<endl;
+        }
+        else if(n == 2) 
+        {
+            int ele;
+            cout<<"Enter element to insert: ";
+            cin>>ele;
+            s.push(ele);
+            cout<<"Inserted element is "<<ele<<endl;
+        }
+        else if(n == 3) 
+        {
+            if(!s.empty()) 
+            {
+                int del = s.top();
+                s.pop();
+                cout<<"Element deleted is "<<del<<endl;
+            } 
+            else 
+            {
+                cout<<"Nothing to delete!"<<endl;
+            }
+        }
+        else if(n == 4) 
+        {
+            if(!s.empty()) 
+            {
+                cout<<"Top element is "<<s.top()<<endl;
+            } 
+            else 
+            {
+                cout<<"Stack Underflow!"<<endl;
+            }
+        }
+        else if(n == 5) 
+        {
+            cout<<"Exiting..."<<endl;
+            break;
+        }
+        else 
+        {
+            cout<<"Invalid choice, please try again."<<endl;
+        }
+    }    
+}
