@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    queue<string> q;
+    q.push("Ajay");
+    q.push("Ajab");
+    q.push("Sajab");
+    q.push("Gajab");
+    cout<<"Queue elements: ";
+    while(!q.empty())
+    {
+        cout<<q.front()<<" ";
+        q.pop();
+    }
+}
