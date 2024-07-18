@@ -1,0 +1,77 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+class Car {
+private:
+    string licensePlate;
+    string owner;
+
+public:
+    Car(string lp, string o)
+        : licensePlate(lp), owner(o) {}
+
+    string getLicensePlate() const {
+        return licensePlate;
+    }
+
+    string getOwner() const {
+        return owner;
+    }
+
+    void setPara(string lp, string o) {
+        licensePlate = lp;
+        owner = o;
+    }
+
+    void display() const {
+        cout << "License Plate: " << licensePlate << ", Owner: " << owner << endl;
+    }
+};
+
+class ParkingLot {
+private:
+    vector<Car> parkedCars;
+    int capacity;
+
+public:
+    ParkingLot(int cap)
+        : capacity(cap) {}
+
+    bool parkCar(const Car& car) {
+        if (parkedCars.size() < capacity) {
+            parkedCars.push_back(car);
+            return true;
+        } else {
+            cout << "Parking lot is full!" << endl;
+            cout<<endl;
+            return false;
+        }
+    }
+
+    void displayParkedCars() const {
+        cout << "Parked cars:\n";
+        cout<<endl;
+        for (const auto& car : parkedCars) {
+            car.display();
+        }
+    }
+};
+
+int main() {
+    ParkingLot myParkingLot(5);
+    Car car1("BC123", "Sanjay Gore");
+    Car car2("YZ457", "Janvi Manse");
+    Car car3("MN423", "Aliya Kapse");
+    Car car4("QR6124", "Meena Sharma");
+
+    myParkingLot.parkCar(car1);
+    myParkingLot.parkCar(car2);
+    myParkingLot.parkCar(car3);  // This should succeed
+    myParkingLot.parkCar(car4);  // This should fail as the lot is full
+
+    myParkingLot.displayParkedCars();
+
+    return 0;
+}
