@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<float> v;
+    int a, b;
+    cout<<"Enter the value of a: ";
+    cin>>a;
+    cout<<"Enter the value of b: ";
+    cin>>b;
+    v.push_back(a);
+    v.push_back(b);
+    int sum = 0;
+    int sub =0;
+    int mul = 0;
+    float div = 0;
+    for(int i:v)
+    {
+        sum = v.front() + v.back();
+    }
+    cout<<endl;
+    cout<<"The addition of a and b: "<<sum<<endl;
+    cout<<endl;
+
+    for(int i:v)
+    {
+        sub = v.front() - v.back();
+    }
+    cout<<"The subtraction of a and b: "<<sub<<endl;
+    cout<<endl;
+
+    for(int i:v)
+    {
+        mul = v.front() * v.back();
+    }
+    cout<<"The multiplication of a and b: "<<mul<<endl;
+    cout<<endl;
+
+    for(int i:v)
+    {
+        div = float(v.front()) / float(v.back());
+    }
+    cout<<"The division of a and b: "<<div<<endl;
+    cout<<endl;
+}
