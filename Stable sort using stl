@@ -1,0 +1,12 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int> arr = {4, 6, 2, 3, 7, 12, 5, 15};
+    stable_sort(arr.begin(), arr.end());
+    for(int num:arr)
+    {
+        cout<<num<<" ";
+    }
+    return 0;
+}
