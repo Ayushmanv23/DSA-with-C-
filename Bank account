@@ -1,0 +1,63 @@
+#include <bits/stdc++.h>
+using namespace std;
+class BankAccount
+{
+private:
+    string accountHolderName;
+    string address;
+    string accountType;
+    int balance;
+    vector<string> transHistory;
+
+public:
+    BankAccount(string name, string addr, string accType, int initialBalance)
+    {
+        accountHolderName = name;
+        address = addr;
+        accountType = accType;
+        balance = initialBalance;
+        cout<<"Account details!"<<endl;
+        cout<<"Name: "<<name<<endl;
+        cout<<"Address: "<<addr<<endl;
+        cout<<"Account type: "<<accType<<endl;
+        cout<<"Initial Balance: "<<initialBalance<<endl;
+        cout<<endl;
+    }
+
+    void deposit(auto amount)
+    {
+        balance += amount;
+        cout<<"The deposited amount is "<<amount<<" and the new balance is "<<balance<<endl;
+    }
+
+    void withdraw(auto amount)
+    {
+        if (amount > balance)
+        {
+            cout<<"Insufficient balance!"<<endl;
+        }
+        else
+        {
+            balance -= amount;
+            cout<<"The withdrawl of "<<amount<<" has been successful !"<<endl;
+            cout<<"New balance is "<<balance<<endl;
+        }
+    }
+
+    void displayBalance()
+    {
+        cout<<"Current balance: "<<balance<<endl;
+    }
+
+
+};
+
+int main()
+{
+    BankAccount account("Ayushman Vohra", "059 Main St", "Savings", 1000);
+    account.deposit(50000);
+    account.withdraw(200);
+    account.withdraw(1500);
+    account.displayBalance();
+    return 0;
+}
