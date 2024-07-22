@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+using namespace std;
+void example()
+{
+    auto x = 10;    //return integer value
+    cout<<"The value of x is "<<x<<endl;
+    cout<<"The type of x is "<<sizeof(x);
+}
+
+int main()
+{
+    example();
+    return 0;
+}
