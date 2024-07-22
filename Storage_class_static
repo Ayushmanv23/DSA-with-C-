@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+void example()
+{
+    static int count = 0;
+    count++;
+    cout<<"Count: "<<count<<endl;
+}
+
+void example2()
+{
+    static int globalVar = 0;  //Visible only within this file
+    globalVar++;
+    cout<<"Global variable is "<<globalVar<<endl;
+}
+int main()
+{
+    example();
+    example2();
+}
