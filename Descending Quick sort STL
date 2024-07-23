@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int> arr = {11, 32, 1, 13, 56, 98};
+    sort(arr.begin(), arr.end(),greater<int>());
+    cout<<"Sorted array: ";
+    for(int num:arr)
+    {
+        cout<<num<<" ";
+    }
+    return 0;
+}
