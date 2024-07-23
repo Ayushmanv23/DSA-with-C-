@@ -1,0 +1,36 @@
+//Execute in different file with extension .cpp
+#include<bits/stdc++.h>
+#include"class_header_file.h"
+using namespace std;
+int main()
+{
+    cout<<"The sum is "<<sum(2,4)<<endl;
+    cout<<"The subtraction is "<<sub(6,5)<<endl;
+    cout<<"The multiplication is "<<mul(4,7)<<endl;
+    cout<<"The division is "<<div(float(43),float(2))<<endl;
+    return 0;
+}
+
+
+
+
+
+//In different file with extension .h
+
+
+int sum(int x, int y)
+{
+    return x + y;
+}
+int sub(int x, int y)
+{
+    return x - y;
+}
+int mul(int x, int y)
+{
+    return x * y;
+}
+float div(float x, float y)
+{
+    return x / y;
+}
