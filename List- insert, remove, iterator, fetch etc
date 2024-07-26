@@ -1,0 +1,80 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cout<<"Enter the size of list: ";    //size of list
+    cin>>n;
+    list<int>numbers;
+    cout<<"Enter the elements: ";     //entering elements
+    for(int i=0;i<n;i++)
+    {
+        int o;
+        cin>>o;
+        numbers.push_back(o);
+    }
+    cout<<"Initial list: ";    //Initial list
+    for(int i:numbers)
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    cout<<"Pushing element (0 & 6): ";   //Pushing the elements
+    numbers.push_front(0);
+    numbers.push_back(6);
+    for(int i:numbers)
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    cout<<"Pop the element (0 & 6): ";   //Poping the elements
+    numbers.pop_front();                 //pop first element
+    numbers.pop_back();                  //pop last element
+    for(int i:numbers)
+    {
+        cout<<i<<" ";                    //display list
+    }
+    numbers.remove(5);
+    cout<<endl;
+    cout<<"List after removing 5: ";
+    for(int i:numbers)
+    {
+        cout<<i<<" ";                    //display list
+    }
+    cout<<endl;
+    cout<<"Number in front "<<numbers.front()<<endl;                   //element at front of list
+    cout<<"Number in back "<<numbers.back()<<endl;                     //element at last of list
+    list<int>::iterator itr =numbers.begin();                          //initializing the iterator
+    numbers.insert(itr,0);
+    cout<<"List after insertion using iterator: ";
+    for(int i:numbers)
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    ++itr;
+    ++itr;
+    cout<<"Second element: "<<*itr<<endl;
+    ++itr;
+    ++itr;                                                             //incrementing the iterator
+    ++itr;
+    cout<<"Fourth element: "<<*itr<<endl;
+    cout<<"Enter the index ";                                          //enter the index you want to search
+    int ind;
+    cin>>ind;
+    int index=1;
+    bool found=false;
+    for( itr =numbers.begin();itr!=numbers.end();itr++,index++)
+    {
+        if(index==ind)
+        {
+        cout<<*itr;                                                    //fetch random element using iterator
+        found= true;
+        break;
+        }
+    }
+return 0;
+}
+
+
+
