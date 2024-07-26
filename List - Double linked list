@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    list<int>numbers={1,2,3,4};
+    cout<<"Intial list: ";
+    for(int i:numbers)
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    numbers.push_front(0);
+    numbers.push_back(5);
+    cout<<"List after element insertion: ";
+    for(int i:numbers)
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    numbers.pop_front();
+    numbers.pop_back();
+    cout<<"List after element deletion: ";
+    for(int i:numbers)
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    cout<<"The front element is "<<numbers.front()<<endl;
+    cout<<"The last element is "<<numbers.back();
+    return 0;
+}
