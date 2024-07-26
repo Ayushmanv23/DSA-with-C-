@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    list<int> l = {1,2,3,4,5,6,7};
+    if(l.empty())
+    {
+        l.push_front(0);
+        cout<<"The element 0 inserted at front of the list."<<endl;
+    }
+    else
+    {
+        l.push_back(8);
+        cout<<"The element 8 inserted at end of the list."<<endl;
+    }
+    for(int i:l)
+    {
+        cout<<i<<" ";
+    }
+}
