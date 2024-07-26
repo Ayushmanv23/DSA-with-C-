@@ -1,0 +1,106 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    list<int> l = {1,2,1,4,2,6,3};
+    cout<<"Initial list: ";
+    for(int i:l)
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    cout<<endl;
+    cout<<"*** List functions ***"<<endl;
+    cout<<"1. Reverse"<<endl;
+    cout<<"2. Sort"<<endl;
+    cout<<"3. Unique"<<endl;
+    cout<<"4. Empty"<<endl;
+    cout<<"5. Size"<<endl;
+    cout<<"6. Clear"<<endl;
+    cout<<"7. Merge"<<endl;
+    cout<<endl;
+    while(true)
+    {
+    cout<<"Enter your choice: ";
+    int c;
+    cin>>c;
+    switch(c)
+    {
+        case 1:
+        {
+            l.reverse();
+            cout<<"List after reverse: ";
+            for(int i:l)
+            {
+                cout<<i<<" ";
+            }
+            cout<<endl;
+            break;
+        }
+        case 2:
+        {
+            l.sort();
+            cout<<"The sorted list is: ";
+            for(int i:l)
+            {
+                cout<<i<<" ";
+            }
+            cout<<endl;
+            break;
+        }
+        case 3:
+        {
+            l.unique();
+            cout<<"List after removing duplicates: ";
+            for(int i:l)
+            {
+                cout<<i<<" ";
+            }
+            cout<<endl;
+            break;
+        }
+        case 4:
+        {
+            if(l.empty())
+            {
+                cout<<"The list is empty."<<endl;
+            }
+            else
+            {
+                cout<<"The list is not empty."<<endl;
+            }
+            break;
+        }
+        case 5:
+        {
+            cout<<"The size of list is "<<l.size()<<endl;
+            break;
+        }
+        case 6:
+        {
+            l.clear();
+            cout<<"The updated list size is "<<l.size()<<endl;
+            break;
+        }
+        case 7:
+        {
+            list<int> l2 = {8,9,10,11,12,13};
+            l.merge(l2);
+            cout<<"List after merging: ";
+            for(int i:l)
+            {
+                cout<<i<<" ";
+            }
+            cout<<endl;
+            break;
+        }
+        default:
+        {
+            cout<<"Invalid choice!"<<endl;
+            break;
+        }
+    }
+    }
+    return 0;
+}
