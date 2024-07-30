@@ -1,0 +1,61 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Node 
+{
+public:
+    int value;
+    Node* next;
+    Node(int data) 
+    {
+        value = data;
+        next = NULL;
+    }
+};
+
+void display(Node* head) 
+{
+    Node* temp = head;
+    while(temp != NULL) 
+        {
+        cout<<temp->value<<" -> ";
+        temp = temp->next;
+    }
+    cout<<"NULL"<<endl;  // to indicate the end of the list
+}
+
+void display2(Node* head) 
+{
+    unordered_set<int> seen;
+    Node* temp = head;
+    while(temp != NULL) 
+    {
+        if(seen.find(temp->value) == seen.end()) 
+        {
+            cout<<temp->value<<" -> ";
+            seen.insert(temp->value);
+        }
+        temp = temp->next;
+    }
+    cout<<"NULL"<<endl;  // to indicate the end of the list
+}
+
+int main() 
+{
+    Node* head = NULL;
+    Node* n1 = new Node(1);
+    Node* n2 = new Node(2);
+    Node* n3 = new Node(2);
+    Node* n4 = new Node(3);
+    Node* n5 = new Node(3);
+    Node* n6 = new Node(3);
+
+    head = n1;              // Link nodes
+    n1->next = n2;
+    n2->next = n3;
+    n3->next = n4;
+    n4->next = n5;
+    n5->next = n6;
+    display(head);          // Initial list
+    display2(head);         // List without duplicates
+    return 0;
+}
