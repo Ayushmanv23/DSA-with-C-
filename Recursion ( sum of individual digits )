@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int rsum(int n)
+{
+    int d,s;
+    if(n!=0)
+    {
+        d = n%10;
+        n = n/10;
+        s = d + rsum(n);
+    }
+    else
+    {
+        return (0);
+    }
+    return(s);
+}
+
+int main()
+{
+    int n, sum;
+    cout<<"Enter the number: ";
+    cin>>n;
+    sum = rsum(n);
+    cout<<"The sum of individual digit is "<<sum;
+    return 0;
+}
