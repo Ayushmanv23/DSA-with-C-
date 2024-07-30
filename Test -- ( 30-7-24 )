@@ -1,0 +1,166 @@
+198: House Robber
+
+class Solution {
+public:
+    int rob(vector<int>& nums) 
+    {
+        int yes = 0;
+        int no = 0;
+        for(int i=0;i<nums.size();i++)
+        {
+            int nyes = no + nums[i];
+            int nno = max(no, yes);
+            yes = nyes;
+            no = nno;
+        }
+        return max(yes, no);
+    }
+};
+
+
+
+
+
+
+
+832: Flipping an Image
+
+class Solution {
+public:
+    vector<vector<int>> flipAndInvertImage(vector<vector<int>>& image) 
+    {
+        int n = image.size();
+        for(int i=0;i<n;i++)
+        {
+            vector<int> x=image[i];
+            reverse(x.begin(),x.end());
+            image[i]=x;
+        }
+        
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<image[i].size();j++)
+                image[i][j]^=1;
+        }
+        
+        return image;
+        
+    }
+};
+
+
+
+
+
+
+
+
+74: Search a 2D Matrix
+
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) 
+    {
+        int m = 0, n = matrix[0].size() - 1;
+        while(m < matrix.size() && n >= 0) 
+        {
+            int current = matrix[m][n];
+            if(current == target) 
+            {
+                return true;
+            }
+            else if(current < target) 
+            {
+                m++;
+            } 
+            else 
+            {
+                n--;
+            }
+        }
+        return false;
+    }
+};
+
+
+
+
+
+
+
+771: Jewels and Stones
+
+class Solution {
+public:
+    bool list[58];
+    
+    int numJewelsInStones(string J, string S) 
+    {
+        int ans=0;
+                
+        for(int i=0; i < J.size(); i++)
+            list[J[i]-65]=true;
+        
+        for(int i=0; i < S.size(); i++)
+            if(list[S[i]-65])
+                ans++;
+        return ans;
+    }
+};
+
+
+
+
+
+
+
+Q5: Reverse the String
+
+#include <bits/stdc++.h>
+string reverseString(string str)
+{
+	int n=str.size();
+	string r;
+	for(int i=n-1;i>=0;i--)
+	{
+		r+=str[i];
+	}
+	return r;
+}
+
+
+
+
+
+
+
+
+
+1859: Sorting the Sentence
+
+class Solution {
+public:
+    string sortSentence(string s) 
+    {
+        stringstream words(s); 
+        string word;
+        pair<int, string> m;
+        vector<pair<int, string> > sent;
+        while(words>>word)
+        {
+            int len = word.size();
+            int i = int(word[len-1]) - 48;
+            sent.push_back(make_pair(i, word.substr(0, len-1)));
+        }
+        sort(sent.begin(), sent.end());
+        string ans = "";
+        int len = sent.size();
+        for(int i=0; i<len; i++)
+        {
+            ans += sent[i].second;
+            if(i!= len-1)
+                ans += " ";
+        }
+        return ans;
+    }
+};
