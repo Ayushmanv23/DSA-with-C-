@@ -1,0 +1,52 @@
+#include<iostream>
+#include<fstream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+    ofstream output_file("example.txt");                                                      // Open a text file for writing
+    if (!output_file)
+    {
+        cout<<"ERROR! Unable to open the file for writing."<<endl;
+        return 1;
+    }
+    output_file<<"30"<<endl;                                                              // Write multiple lines to the file
+    output_file<<"40"<<endl;
+    output_file<<"50"<<endl;
+    output_file.close();                                                                      // Close the file
+
+                                                                                              // Open the text file for reading
+    ifstream input_file("example.txt");
+    if (!input_file)
+    {
+        cout<<"ERROR! Unable to open the file for reading."<<endl;
+        return 1;
+    }
+
+    vector<double> numbers;
+    double number;
+    while (input_file >> number)
+    {
+        numbers.push_back(number);                                                           // Read numbers from the file and store them in the vector
+    }
+
+    if (numbers.empty())
+    {
+        cout<<"No numbers found in the file."<<endl;
+        return 1;
+    }
+
+    double sum = 0;
+    for (double num : numbers)
+    {
+        sum += num;
+    }
+    double mean = sum / numbers.size();
+                                                                                             // Output the results
+    cout<<"The Sum is "<<sum<<endl;
+    cout<<"The Mean is "<<mean<<endl;
+    input_file.close();                                                                     // Close the file
+
+    return 0;
+}
