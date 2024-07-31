@@ -1,0 +1,16 @@
+#include <fstream>
+#include <iostream>
+using namespace std;
+int main()
+{
+    const char* filePath = "example.txt";                                          // File path
+    ofstream ofs(filePath, ofstream::out | ofstream::trunc);                       // Open the file in truncate mode
+    if(!ofs.is_open())
+    {
+        cerr<<"Error: Could not open the file!"<<endl;                             // Check if the file is open
+        return 1;
+    }
+    ofs.close();
+    cout<<"File contents deleted successfully."<<endl;                             // Close the file
+    return 0;
+}
